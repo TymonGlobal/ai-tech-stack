@@ -629,7 +629,7 @@ function TrackSelector({ onSelect }) {
   return (
     <div style={{
       display: "flex", gap: 24, justifyContent: "center", flexWrap: "wrap",
-      maxWidth: 1100, margin: "0 auto",
+      maxWidth: 1260, margin: "0 auto",
     }} className="track-selector">
       {Object.entries(TRACKS).map(([key, track]) => (
         <button
@@ -637,7 +637,7 @@ function TrackSelector({ onSelect }) {
           onClick={() => onSelect(key)}
           className="track-card"
           style={{
-            flex: 1, minWidth: 300, maxWidth: 340,
+            flex: 1, minWidth: 300, maxWidth: 400,
             background: "#fff",
             border: "1px solid #f0f0f0",
             borderRadius: 20, padding: 0, cursor: "pointer",
@@ -721,13 +721,13 @@ export default function AIRoadmap() {
       {/* Top Bar */}
       <div style={{
         display: "flex", justifyContent: "flex-start", alignItems: "center",
-        maxWidth: 1100, margin: "0 auto 40px",
+        maxWidth: 1260, margin: "0 auto 40px",
       }}>
-        <img src="/tymonglobal.png" alt="Tymon Global" style={{ height: 42 }} />
+        <img src={import.meta.env.BASE_URL + "tymonglobal.png"} alt="Tymon Global" style={{ height: 42 }} />
       </div>
 
       {/* Header */}
-      <div style={{ textAlign: "center", marginBottom: 48, maxWidth: 700, margin: "0 auto 48px" }}>
+      <div style={{ textAlign: "center", marginBottom: 48, maxWidth: 800, margin: "0 auto 48px" }}>
         <div style={{ fontSize: 14, fontFamily: mono, color: "#64748b", letterSpacing: 2, textTransform: "uppercase", marginBottom: 14, fontWeight: 500 }}>
           Bridging Academic Foundations & Industry Practice
         </div>
@@ -748,7 +748,7 @@ export default function AIRoadmap() {
 
           {/* Industry Landscape */}
           <div style={{
-            maxWidth: 800, margin: "56px auto 0", padding: "24px 32px",
+            maxWidth: 960, margin: "56px auto 0", padding: "24px 32px",
             background: "#fff", borderRadius: 16, textAlign: "center",
             boxShadow: "0 1px 4px rgba(0,0,0,0.04)", border: "1px solid #f0f0f0",
           }}>
@@ -773,7 +773,7 @@ export default function AIRoadmap() {
       ) : (
         <div style={{ animation: "slideIn 0.4s ease" }}>
           {/* Back + Track Header */}
-          <div style={{ maxWidth: 800, margin: "0 auto 24px", display: "flex", alignItems: "center", gap: 16 }}>
+          <div style={{ maxWidth: 960, margin: "0 auto 24px", display: "flex", alignItems: "center", gap: 16 }}>
             <button
               onClick={() => setActiveTrack(null)}
               style={{
@@ -795,7 +795,7 @@ export default function AIRoadmap() {
             </div>
           </div>
 
-          <div style={{ maxWidth: 800, margin: "0 auto 28px", fontSize: 15, color: "#475569", lineHeight: 1.7 }}>
+          <div style={{ maxWidth: 960, margin: "0 auto 28px", fontSize: 15, color: "#475569", lineHeight: 1.7 }}>
             {track.subtitle}
           </div>
 
@@ -825,7 +825,7 @@ export default function AIRoadmap() {
           </div>
 
           {/* Progress Bar */}
-          <div style={{ maxWidth: 700, margin: "0 auto 32px", height: 4, background: "#f1f5f9", borderRadius: 4, position: "relative", overflow: "hidden" }}>
+          <div style={{ maxWidth: 860, margin: "0 auto 32px", height: 4, background: "#f1f5f9", borderRadius: 4, position: "relative", overflow: "hidden" }}>
             <div style={{
               position: "absolute", left: 0, top: 0, height: "100%", borderRadius: 4,
               width: `${(PHASES.findIndex((p) => p.id === activePhase) + 1) * 25}%`,
@@ -835,7 +835,7 @@ export default function AIRoadmap() {
           </div>
 
           {/* Topics */}
-          <div style={{ maxWidth: 800, margin: "0 auto", animation: "fadeIn 0.3s ease" }}>
+          <div style={{ maxWidth: 960, margin: "0 auto", animation: "fadeIn 0.3s ease" }}>
             {(track.phases[activePhase] || []).length > 0 ? (
               (track.phases[activePhase] || []).map((topic, i) => (
                 <TopicCard key={`${activePhase}-${i}`} topic={topic} trackColor={track.color} />
